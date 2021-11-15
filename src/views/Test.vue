@@ -1,8 +1,15 @@
 <template>
-  <v-row justify="test" class="ma-10">
+  <v-row justify="test" class="ma-12">
     <v-expansion-panels inset>
       <v-expansion-panel class="mb-5" v-for="test in tests" :key="test.title">
-        <v-expansion-panel-header> {{ test.title }} </v-expansion-panel-header>
+        <div class="imgContainer">
+          <img src="../images/sunset.jpg" />
+        </div>
+        <v-expansion-panel-header>
+          <div class="titleContainer">
+            {{ test.title }}
+          </div>
+        </v-expansion-panel-header>
         <v-expansion-panel-content>
           <div class="font-weight-bold">Due By {{ test.due }}</div>
 
@@ -19,7 +26,7 @@ export default {
     return {
       tests: [
         {
-          title: "프로젝트1",
+          title: "부산광역시 정보고속도로",
           person: "My Team1",
           due: "2020.11.12",
           state: "complete",
@@ -71,3 +78,17 @@ export default {
   },
 };
 </script>
+
+<style>
+.imgContainer {
+  position: inherit;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  clip: rect(202px, 220px, 220px, 20px);
+}
+.titleContainer {
+  font-size: 20px;
+  font-weight: bold;
+}
+</style>

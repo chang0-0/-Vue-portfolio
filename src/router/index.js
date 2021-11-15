@@ -5,6 +5,7 @@ import Team from "../views/Team.vue";
 import Project from "../views/Project.vue";
 import School from "../views/School.vue";
 import Test from "../views/Test.vue";
+import Me from "../views/Me.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/test",
     name: "test",
     component: Test,
+  },
+  {
+    path: "/me",
+    name: "me",
+    component: Me,
   },
 ];
 
