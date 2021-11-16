@@ -86,45 +86,44 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  font-family: "Roboto-Bold" "NanumSquare", sans-serif;
 
   .intro_section1 {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-    color: #353535;
     position: absolute;
-    margin-top: 500px;
-    left: 11%;
-    width: 550px;
-    height: 300px;
-    font-family: "Roboto-Bold" "NanumSquare", sans-serif;
-    font-size: 8vw;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    top: 50vh;
+    left: 32vw;
+    width: 67vh;
+    color: #353535;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    z-index: 4;
 
     .start_title1 {
-      left: 67%;
-      margin-top: -190px;
+      font-size: 8vw;
+      font-family: "GowunDodum-Regular";
+      left: 58vh;
       position: absolute;
-      font-weight: 600;
-      text-align: center;
+      margin-top: -10vw;
+      margin-left: -28vw;
     }
 
     .span_deco {
-      position: absolute;
       display: inline-block;
-      width: 1000px;
+      width: 88vh;
       height: 3px;
       background: #353535;
       vertical-align: middle;
     }
 
     .start_title2 {
-      font-weight: 100;
+      top: 20vh;
+      left: 28vw;
+      font-size: 5vw;
+      font-family: "GowunDodum-Regular";
       position: absolute;
+      margin-top: -10vw;
+      margin-left: -28vw;
     }
   }
 }
@@ -132,7 +131,7 @@ export default {
 .intro_section2 {
   padding: 0px 150px;
   position: absolute;
-  top: 70%;
+  top: 84%;
 
   img {
     width: 88%;
@@ -187,6 +186,10 @@ export default {
 
 a {
   text-decoration: none;
+  color: #494949;
+}
+
+a:visited {
   color: #494949;
 }
 
