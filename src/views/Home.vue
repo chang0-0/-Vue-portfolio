@@ -2,99 +2,55 @@
   <div class="dashboard">
     <h1 class="subheading grey--text">Dashboard</h1>
 
-    <v-card height="auto">
-      <v-card flat tile width="100%" class="red lighten-1 text-center">
-        <v-card-text>
-          <v-btn v-for="icon in icons" :key="icon" class="" icon>
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
+    <v-content>
+      <v-container class="my-3 mt-12">
+        <v-row class="mb-3">
+          <v-btn small plain @click="sortBy('title')">
+            <v-icon dark class="mr-3">sort</v-icon>
+            <span> by project title </span>
           </v-btn>
-        </v-card-text>
+          <v-btn small plain @click="sortBy('person')">
+            <v-icon dark class="mr-3">person</v-icon>
+            <span> by developer </span>
+          </v-btn>
+          <v-btn small plain @click="sortBy('due')">
+            <v-icon dark class="mr-3">date_range</v-icon>
+            <span> by due </span>
+          </v-btn>
+        </v-row>
 
-        <v-card-text class="white--text text-h4">
-          {{ new Date().getFullYear() }}
-        </v-card-text>
-      </v-card>
-
-      <v-row align="center" justify="center" class="ma-4">
-        <v-col>
-          <div>
-            <span class="spantitle">소개</span>
-          </div>
-          <div class="IntroduceContainer">
-            <span class="IntroduceSpan">
-              <h3>Name: 최창영</h3>
-              <h3>Age: 26</h3>
-              <img src="../images/sunset.jpg" />
-            </span>
-          </div>
-          <v-divider class="ma-10"></v-divider>
-          <div>
-            <span class="spantitle">자격증 보유</span>
-          </div>
-          <div class="IntroduceContainer">
-            <span class="cardSpan">
-              <h3>정보처리기사</h3>
-            </span>
-          </div>
-          <v-divider class="ma-10"></v-divider>
-          <div>
-            <span class="spantitle">프로젝트</span>
-          </div>
-          <v-content>
-            <v-container class="my-3 mt-12">
-              <v-row class="mb-3">
-                <v-btn small plain @click="sortBy('title')">
-                  <v-icon dark class="mr-3">sort</v-icon>
-                  <span> by project title </span>
-                </v-btn>
-                <v-btn small plain @click="sortBy('person')">
-                  <v-icon dark class="mr-3">person</v-icon>
-                  <span> by developer </span>
-                </v-btn>
-                <v-btn small plain @click="sortBy('due')">
-                  <v-icon dark class="mr-3">date_range</v-icon>
-                  <span> by due </span>
-                </v-btn>
-              </v-row>
-
-              <v-card
-                flat
-                class="white"
-                enable-transition
-                outlined
-                v-for="project in projects"
-                :key="project.title"
-              >
-                <v-row no-gutters :class="`pa-5 project ${project.state}`">
-                  <v-col cols="12" md="6">
-                    <div class="caption grey--text">Project Title</div>
-                    <div>{{ project.title }}</div>
-                  </v-col>
-                  <v-col cols="4" md="2" sm="4">
-                    <div class="caption grey--text">Person</div>
-                    <div>{{ project.person }}</div>
-                  </v-col>
-                  <v-col cols="8" md="2" sm="5">
-                    <div class="caption grey--text">Due</div>
-                    <div>{{ project.due }}</div>
-                  </v-col>
-                  <v-col cols="4" md="2" sm="5">
-                    <div class="caption grey--text">State</div>
-                    <div :class="`${project.state} state`">
-                      {{ project.state }}
-                    </div>
-                  </v-col>
-                </v-row>
-                <v-divider></v-divider>
-              </v-card>
-            </v-container>
-          </v-content>
+        <v-card
+          flat
+          class="white"
+          enable-transition
+          outlined
+          v-for="project in projects"
+          :key="project.title"
+        >
+          <v-row no-gutters :class="`pa-5 project ${project.state}`">
+            <v-col cols="12" md="6">
+              <div class="caption grey--text">Project Title</div>
+              <div>{{ project.title }}</div>
+            </v-col>
+            <v-col cols="4" md="2" sm="4">
+              <div class="caption grey--text">Person</div>
+              <div>{{ project.person }}</div>
+            </v-col>
+            <v-col cols="8" md="2" sm="5">
+              <div class="caption grey--text">Due</div>
+              <div>{{ project.due }}</div>
+            </v-col>
+            <v-col cols="4" md="2" sm="5">
+              <div class="caption grey--text">State</div>
+              <div :class="`${project.state} state`">
+                {{ project.state }}
+              </div>
+            </v-col>
+          </v-row>
           <v-divider></v-divider>
-        </v-col>
-      </v-row>
-    </v-card>
+        </v-card>
+      </v-container>
+    </v-content>
   </div>
 </template>
 
@@ -105,38 +61,38 @@ export default {
       projects: [
         {
           title: "부산광역시 정보고속망 네트워크 시뮬레이션",
-          person: "최창영",
+          person: "Young",
           due: "2019.09",
           state: "complete",
         },
         {
-          title: "프로젝트2",
-          person: "Only me",
-          due: "2020.11.12",
+          title: "안드로이드 독서기록 어플리케이션",
+          person: "Young",
+          due: "2019 10",
           state: "complete",
         },
         {
-          title: "프로젝트3",
-          person: "My Team3",
-          due: "2020.11.12",
+          title: "토익테스트 웹 프로그램",
+          person: "Young",
+          due: "2020.04",
           state: "complete",
         },
         {
-          title: "프로젝트4",
-          person: "My Team4",
-          due: "2020.11.12",
+          title: "해파리 프로젝트",
+          person: "FrontEnd: Young, BackEnd: 백경준",
+          due: "2020.10",
           state: "complete",
         },
         {
-          title: "프로젝트5",
-          person: "Only me",
-          due: "2020.11.12",
-          state: "complete",
+          title: "ColorPaper",
+          person: "Young",
+          due: "2021.04 ~",
+          state: "ongoing",
         },
         {
           title: "포트폴리오제작",
-          person: "CHANG YOUNG",
-          due: "2021.10.01",
+          person: "Young",
+          due: "2021.10~",
           state: "ongoing",
         },
       ],
