@@ -3,7 +3,7 @@
     <v-expansion-panels inset>
       <v-expansion-panel class="mb-5" v-for="test in tests" :key="test.title">
         <div class="imgContainer">
-          <img src="../images/sunset.jpg" />
+          <img src="../assets/images/sunset.jpg" />
         </div>
         <v-expansion-panel-header>
           <div class="titleContainer">

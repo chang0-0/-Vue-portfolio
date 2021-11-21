@@ -1,56 +1,54 @@
 <template>
-  <div class="dashboard">
-    <h1 class="subheading grey--text">Dashboard</h1>
-
-    <v-content>
-      <v-container class="my-3 mt-12">
-        <v-row class="mb-3">
-          <v-btn small plain @click="sortBy('title')">
-            <v-icon dark class="mr-3">sort</v-icon>
-            <span> by project title </span>
-          </v-btn>
-          <v-btn small plain @click="sortBy('person')">
-            <v-icon dark class="mr-3">person</v-icon>
-            <span> by developer </span>
-          </v-btn>
-          <v-btn small plain @click="sortBy('due')">
-            <v-icon dark class="mr-3">date_range</v-icon>
-            <span> by due </span>
-          </v-btn>
-        </v-row>
-
-        <v-card
-          flat
-          class="white"
-          enable-transition
-          outlined
-          v-for="project in projects"
-          :key="project.title"
-        >
-          <v-row no-gutters :class="`pa-5 project ${project.state}`">
-            <v-col cols="12" md="6">
-              <div class="caption grey--text">Project Title</div>
-              <div>{{ project.title }}</div>
-            </v-col>
-            <v-col cols="4" md="2" sm="4">
-              <div class="caption grey--text">Person</div>
-              <div>{{ project.person }}</div>
-            </v-col>
-            <v-col cols="8" md="2" sm="5">
-              <div class="caption grey--text">Due</div>
-              <div>{{ project.due }}</div>
-            </v-col>
-            <v-col cols="4" md="2" sm="5">
-              <div class="caption grey--text">State</div>
-              <div :class="`${project.state} state`">
-                {{ project.state }}
-              </div>
-            </v-col>
-          </v-row>
-          <v-divider></v-divider>
-        </v-card>
-      </v-container>
-    </v-content>
+  <div class="Home">
+    <div class="intro_section1">
+      <span class="start_title1">PORTFOLIO</span>
+      <span class="span_deco"></span>
+      <span class="start_title2">Developer YOUNG</span>
+    </div>
+    <div class="intro_section2">
+      <img src="../assets/images/sunset.jpg" />
+      <div class="img_deco_copy">WEB DEVELOPMENT</div>
+    </div>
+    <div class="intro_section3">
+      <div class="sub_title2">Introduction</div>
+      <div class="main_title2">FORNT-END DEVELOPER</div>
+      <div class="section_desc">사용자의 감성을 자극하는 개발자 <br /></div>
+      <div class="intro_section3_img">
+        <img src="../assets/images/project_photo.jpg" class="project_photo" />
+      </div>
+      <div class="career_list_section">
+        <div class="carrer_list_t">
+          컴퓨터 공학과 (졸업예정)
+          <br />
+          FRONT-DEVELOPER
+          <br />
+          JAVA<br />
+          React <br />
+          Vue <br />
+          CSS <br />
+          정보처리기사 보유
+        </div>
+        <div class="career_deco"></div>
+      </div>
+    </div>
+    <div class="section_top_button">
+      <div style="cursor: pointer" onclick="window.scrollTo(0,0);">
+        <v-btn elevation="1" icon large outlined raised rounded>
+          <v-icon class="top_icon">keyboard_double_arrow_up</v-icon>
+        </v-btn>
+      </div>
+    </div>
+    <div class="sns_section">
+      <span class="sns_deco"></span>
+      <ul class="sns_section_ul">
+        <li class="sns_section_li">
+          <a href="https://github.com/chang0-0">Git</a>
+        </li>
+        <li class="sns_section_li">
+          <a href="https://velog.io/@lifeisbeautiful">Ve</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -58,55 +56,13 @@
 export default {
   data() {
     return {
-      projects: [
-        {
-          title: "부산광역시 정보고속망 네트워크 시뮬레이션",
-          person: "Young",
-          due: "2019.09",
-          state: "complete",
-        },
-        {
-          title: "안드로이드 독서기록 어플리케이션",
-          person: "Young",
-          due: "2019 10",
-          state: "complete",
-        },
-        {
-          title: "토익테스트 웹 프로그램",
-          person: "Young",
-          due: "2020.04",
-          state: "complete",
-        },
-        {
-          title: "해파리 프로젝트",
-          person: "FrontEnd: Young, BackEnd: 백경준",
-          due: "2020.10",
-          state: "complete",
-        },
-        {
-          title: "ColorPaper",
-          person: "Young",
-          due: "2021.04 ~",
-          state: "ongoing",
-        },
-        {
-          title: "포트폴리오제작",
-          person: "Young",
-          due: "2021.10~",
-          state: "ongoing",
-        },
-      ],
+      variant: "default",
     };
-  },
-  methods: {
-    sortBy(prop) {
-      this.projects.sort((a, b) => (a[prop] > b[prop] ? -1 : 1));
-    },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 @font-face {
   font-family: "GowunDodum-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
@@ -115,40 +71,231 @@ export default {
   font-style: normal;
 }
 
-.project.complete {
-  border-left: 4px solid coral;
-}
-.project.ongoing {
-  border-left: 4px solid #ffc107;
-}
-.state.complete {
-  color: coral;
-}
-.state.ongoing {
-  color: #ffc107;
+/* 나눔 명조 */
+@font-face {
+  font-family: "Nanum Myeongjo";
+  font-weight: 700;
+  src: url("../fonts/NanumMyeongjoBold.ttf") format("truetype");
 }
 
-div {
-  font-family: "GowunDodum-Regular";
+/* 로보토 */
+@font-face {
+  font-family: "Roboto Regular";
+  font-weight: 400;
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
-.imgContainer {
+@font-face {
+  font-family: "Roboto Medium";
+  font-weight: 500;
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  font-weight: 700;
+  src: url("../fonts/Roboto-Bold.ttf") format("truetype");
+}
+
+/*나눔스퀘어*/
+@font-face {
+  font-family: "NanumSquare";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Y";
+  src: url("../fonts/Y 너만을 비춤체.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SEBANG";
+  src: url("../fonts/SEBANG Gothic.ttf") format("truetype");
+}
+
+.Home {
+  margin-top: 840px;
+}
+
+.intro_section1 {
   position: absolute;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  clip: rect(202px, 220px, 220px, 20px);
-}
-.titleContainer {
+  margin: 0px;
+  padding: 0px;
   font-size: 20px;
-  font-weight: bold;
-}
-.spantitle {
-  font-size: 50px;
-  margin-top: 40px;
+  top: 45vh;
+  left: 30vw;
+  width: 67vh;
+  color: #353535;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  .start_title1 {
+    font-size: 8vw;
+    font-family: "GowunDodum-Regular";
+    left: 58vh;
+    position: absolute;
+    margin-top: -10vw;
+    margin-left: -28vw;
+  }
+
+  .span_deco {
+    display: inline-block;
+    width: 88vh;
+    height: 3px;
+    background: #353535;
+    vertical-align: middle;
+  }
+
+  .start_title2 {
+    top: 20vh;
+    left: 28vw;
+    width: 88vh;
+    font-size: 5vw;
+    font-family: "GowunDodum-Regular";
+    position: absolute;
+    margin-top: -10vw;
+    margin-left: -28vw;
+  }
 }
 
-.cardSpan {
-  margin-top: 140px;
+.intro_section2 {
+  padding: 0px 150px;
+  position: relative;
+  top: 84%;
+
+  img {
+    width: 88%;
+  }
+}
+
+.intro_section2 .img_deco_copy {
+  position: absolute;
+  top: 65%;
+  right: -10%;
+  font-size: 8vw;
+  font-weight: 800;
+  font-family: "Y";
+}
+
+.intro_section3 {
+  padding: 300px 130px 400px;
+  overflow: hidden;
+  margin-top: -50px;
+
+  .sub_title2 {
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .main_title2 {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  .section_desc {
+    margin-top: 20px;
+    font-size: 40px;
+    color: #898989;
+    line-height: 34px;
+    font-weight: 400;
+    font-family: "Y";
+  }
+
+  .intro_section3_img {
+    width: auto;
+    height: auto;
+    left: 20%;
+    padding: 0px 150px;
+    position: relative;
+    margin-top: 14px;
+    top: 84%;
+
+    .project_photo {
+      width: 70%;
+    }
+  }
+
+  .career_list_section {
+    font-family: "Roboto Medium";
+    margin-top: 40px;
+    font-weight: 800;
+    font-size: 3.7vw;
+    color: #6b6b6b;
+    letter-spacing: 0;
+    line-height: 7vw;
+    position: relative;
+    margin-bottom: -240px;
+
+    .carrer_list_t {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+.section_top_button {
+  position: relative;
+  bottom: 60px;
+  font-size: 20px;
+  z-index: 2;
+  margin-left: 40px;
+  left: 50%;
+
+  .top_icon {
+    font-size: 34px;
+  }
+}
+
+.sns_section {
+  position: fixed;
+  bottom: 60px;
+  right: 77px;
+  font-size: 20px;
+  z-index: 2;
+}
+
+.sns_section .sns_deco {
+  display: inline-block;
+  width: 110px;
+  height: 3px;
+  background: #353535;
+  vertical-align: middle;
+  margin-top: -5px;
+  margin-right: 40px;
+}
+
+.sns_section {
+  font-family: "Roboto-Bold" "NanumSquare", sans-serif;
+  ul {
+    display: inline-block;
+  }
+
+  ul li {
+    font-weight: 800;
+    font-size: 22px;
+    display: inline-block;
+    margin-left: 40px;
+    vertical-align: middle;
+  }
+
+  ul li :first-child {
+    margin-left: 0px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #494949;
+}
+
+a:visited {
+  color: #494949;
+}
+
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
 }
 </style>

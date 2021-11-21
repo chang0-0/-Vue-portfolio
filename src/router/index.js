@@ -5,7 +5,7 @@ import Team from "../views/Team.vue";
 import Project from "../views/Project.vue";
 import School from "../views/School.vue";
 import Test from "../views/Test.vue";
-import Me from "../views/Me.vue";
+import Dashboard from "../views/Dashboard.vue";
 
 Vue.use(VueRouter);
 
@@ -36,9 +36,9 @@ const routes = [
     component: Test,
   },
   {
-    path: "/me",
-    name: "me",
-    component: Me,
+    path: "/dashboard",
+    name: "dashboard",
+    component: Dashboard,
   },
 ];
 

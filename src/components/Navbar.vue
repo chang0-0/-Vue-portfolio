@@ -41,12 +41,12 @@ export default {
     drawer: false,
     group: null,
     items: [
-      { icon: "mdi-domain", text: "Dashboard", router: "/" },
+      { icon: "mdi-account", text: "It's Me", router: "/" },
+      { icon: "mdi-domain", text: "Dashboard", router: "/dashboard" },
       { icon: "mdi-inbox", text: "My Project", router: "/project" },
-      { icon: "mdi-account", text: "Team", router: "/team" },
+      // { icon: "mdi-account", text: "Team", router: "/team" },
       { icon: "mdi-school", text: "School", router: "/school" },
       { icon: "mdi-circle", text: "Test", router: "/test" },
-      { icon: "mdi-rectangle", text: "Me", router: "/me" },
     ],
   }),
 

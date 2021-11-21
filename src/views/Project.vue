@@ -10,7 +10,8 @@
           </v-expansion-panel-header>
           <v-expansion-panel-content>
             <div class="font-weight-bold">Due By {{ project.due }}</div>
-
+            <img :src="project.image1" />
+            <img :src="project.image2" />
             <div>{{ project.content }}</div>
           </v-expansion-panel-content>
         </v-expansion-panel>
@@ -25,55 +26,62 @@ export default {
     return {
       projects: [
         {
-          title: "프로젝트1",
-          person: "My Team1",
-          due: "2020.11.12",
+          title: "부산광역시 정보고속망 네트워크 시뮬레이션",
+          person: "Young",
+          due: "2019.09",
           state: "complete",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          image1: require("../assets/images/project1-1.jpg"),
+          image2: require("../assets/images/project1-2.jpg"),
         },
         {
-          title: "프로젝트2",
-          person: "Only me",
-          due: "2020.11.12",
+          title: "안드로이드 독서기록 어플리케이션",
+          person: "Young",
+          due: "2019.10",
           state: "complete",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          image1: require("../assets/images/sunset.jpg"),
+          image2: require("../assets/images/sunset.jpg"),
         },
         {
-          title: "프로젝트3",
-          person: "My Team3",
-          due: "2020.11.12",
+          title: "토익테스트 웹 프로그램",
+          person: "Young",
+          due: "2020.04",
           state: "complete",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          image1: require("../assets/images/sunset.jpg"),
+          image2: require("../assets/images/sunset.jpg"),
         },
         {
-          title: "프로젝트4",
-          person: "My Team4",
-          due: "2020.11.12",
+          title: "해파리 프로젝트",
+          person: "FrontEnd: Young, BackEnd: 백경준",
+          due: "2020.10",
           state: "complete",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          image1: require("../assets/images/sunset.jpg"),
+          image2: require("../assets/images/sunset.jpg"),
         },
         {
-          title: "프로젝트5",
-          person: "Only me",
-          due: "2020.11.12",
-          state: "complete",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          title: "ColorPaper",
+          person: "Young",
+          due: "2021.04 ~",
+          state: "ongoing",
+          image1: require("../assets/images/sunset.jpg"),
+          image2: require("../assets/images/sunset.jpg"),
         },
         {
           title: "포트폴리오제작",
-          person: "CHANG YOUNG",
-          due: "2021.10.01",
+          person: "Young",
+          due: "2021.10~",
           state: "ongoing",
-          content: "내용입니다.",
-          avatar: "/doctorStrange.jpg",
+          image1: require("../assets/images/sunset.jpg"),
+          image2: require("../assets/images/sunset.jpg"),
         },
       ],
     };
   },
 };
 </script>
+
+<style lang="scss">
+img {
+  margin-top: 40px;
+  width: 70%;
+}
+</style>
