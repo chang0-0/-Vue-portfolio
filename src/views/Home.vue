@@ -75,7 +75,7 @@ export default {
 @font-face {
   font-family: "Nanum Myeongjo";
   font-weight: 700;
-  src: url("../fonts/NanumMyeongjoBold.ttf") format("truetype");
+  src: url("../fonts/NanumMyeongjo-ExtraBold.ttf") format("truetype");
 }
 
 /* 로보토 */
@@ -97,6 +97,27 @@ export default {
   src: url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 
+/* G마켓Bold */
+@font-face {
+  font-family: "GmarketSansBold";
+  font-weight: 700;
+  src: url("../fonts/GmarketSansTTFBold.ttf") format("truetype");
+}
+
+/* G마켓Light */
+@font-face {
+  font-family: "GmarketSansLight";
+  font-weight: 700;
+  src: url("../fonts/GmarketSansTTFLight.ttf") format("truetype");
+}
+
+/* G마켓Medium */
+@font-face {
+  font-family: "GmarketSansMedium";
+  font-weight: 700;
+  src: url("../fonts/GmarketSansTTFMedium.ttf") format("truetype");
+}
+
 /*나눔스퀘어*/
 @font-face {
   font-family: "NanumSquare";
@@ -106,6 +127,12 @@ export default {
 @font-face {
   font-family: "Y";
   src: url("../fonts/Y 너만을 비춤체.ttf") format("truetype");
+}
+
+/*BlackHanSans-Regular*/
+@font-face {
+  font-family: "BlackHanSans";
+  src: url("../fonts/BlackHanSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
