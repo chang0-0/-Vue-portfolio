@@ -2,7 +2,7 @@
   <div class="project">
     <h1>Project</h1>
     <v-container>
-      <v-row justify="test" class="ma-10">
+      <v-row justify="test" class="ma-6">
         <v-expansion-panels inset>
           <v-expansion-panel
             class="mt-1"
@@ -22,11 +22,11 @@
               </div>
               <div class="tech">
                 사용 기술
-                <div>{{ project.tech }}</div>
+                <div class="tech_in">{{ project.tech }}</div>
               </div>
               <div class="planning">
                 프로젝트 설계
-                <div>{{ project.planning }}</div>
+                <div class="planning_in">{{ project.planning }}</div>
               </div>
               <img :src="project.image1" />
               <img :src="project.image2" />
@@ -61,7 +61,11 @@ export default {
           title: "안드로이드 독서기록 어플리케이션",
           person: "Young",
           due: "2019.10",
-          content: "complete",
+          content:
+            "안드로이드 스튜디오를 사용해서 JAVA로 독서한 책들과 독서의 내용을 저장할 수 있는 어플리케이션 개발",
+          tech: "Android, JAVA, XML, CSS",
+          planning:
+            "JAVA 언어를 중심으로 RecyclerView를 사용, Singleton 디자인패턴을 이용해서 개발",
           image1: require("../assets/images/project2-1.jpg"),
           image2: "",
           image3: "",
@@ -70,7 +74,10 @@ export default {
           title: "토익테스트 웹 프로그램",
           person: "Young",
           due: "2020.04",
-          content: "complete",
+          content: "JAVA를 사용해 토익 테스트를 볼 수 있는 웹 프로그램을 제작",
+          tech: "JAVA, JSP, DB(Oracle SQL, JDBC), CSS",
+          planning:
+            "JSP와 CSS를 사용해 Front-End를 설계하고 JAVA와 Oracle SQL, JDBC를 이용해 Back-End를 설계했습니다.",
           image1: require("../assets/images/project3-1.jpg"),
           image2: require("../assets/images/project3-2.jpg"),
           image3: "",
@@ -79,7 +86,12 @@ export default {
           title: "해파리 프로젝트",
           person: "FrontEnd: Young, BackEnd: 백경준",
           due: "2020.10",
-          content: "complete",
+          content:
+            "최근 해파리관련 가고 이슈가 많이 떠오르면서 해당 문제의 사고를 줄이고자 국립수산 과학원 API를 활용하여 웹 페이지 개발 후 AWS로 서버 실행",
+          tech: "JAVA(JSP), DB(SQL, JDBC), Python, CSS",
+          planning:
+            "해파리 데이터를 웹 페이지에 지도로 표시하고, python의 웹 크롤링 기술을 이용해 AWS의 EC2를 사용해서 서버 실행 및 cloudWatch, Kinesis 를 통해 데이터 그래프화  ",
+
           image1: require("../assets/images/project4-1.jpg"),
           image2: require("../assets/images/project4-2.jpg"),
           image3: require("../assets/images/project4-3.jpg"),
@@ -128,6 +140,28 @@ img {
   font-size: 1.9vh;
 
   .content_in {
+    color: rgb(94, 94, 94);
+  }
+}
+
+.tech {
+  margin-top: 20px;
+  font-family: "GmarketSansTTFBold";
+  font-weight: bold;
+  font-size: 1.9vh;
+
+  .tech {
+    color: rgb(94, 94, 94);
+  }
+}
+
+.planning {
+  margin-top: 20px;
+  font-family: "GmarketSansTTFBold";
+  font-weight: bold;
+  font-size: 1.9vh;
+
+  .planning_in {
     color: rgb(94, 94, 94);
   }
 }

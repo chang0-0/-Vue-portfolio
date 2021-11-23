@@ -46,7 +46,6 @@ export default {
       { icon: "mdi-inbox", text: "My Project", router: "/project" },
       // { icon: "mdi-account", text: "Team", router: "/team" },
       { icon: "mdi-school", text: "School", router: "/school" },
-      { icon: "mdi-circle", text: "Test", router: "/test" },
     ],
   }),
 
