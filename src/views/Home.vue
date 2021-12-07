@@ -118,6 +118,34 @@ export default {
   src: url("../fonts/GmarketSansTTFMedium.ttf") format("truetype");
 }
 
+/* 카페24*/
+@font-face {
+  font-family: "Cafe24Dangdanghae";
+  font-weight: 700;
+  src: url("../fonts/Cafe24Dangdanghae.ttf") format("truetype");
+}
+
+/* 카페24*/
+@font-face {
+  font-family: "Cafe24Ohsquareair";
+  font-weight: 700;
+  src: url("../fonts/Cafe24Ohsquareair.ttf") format("truetype");
+}
+
+/* 카페24*/
+@font-face {
+  font-family: "Cafe24Simplehae";
+  font-weight: 700;
+  src: url("../fonts/Cafe24Simplehae.ttf") format("truetype");
+}
+
+/* 카페24*/
+@font-face {
+  font-family: "Cafe24SsurroundAir";
+  font-weight: 700;
+  src: url("../fonts/Cafe24SsurroundAir.ttf") format("truetype");
+}
+
 /*나눔스퀘어*/
 @font-face {
   font-family: "NanumSquare";

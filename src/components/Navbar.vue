@@ -16,6 +16,19 @@
     </v-toolbar>
 
     <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+      <v-layout column align-center>
+        <v-flex class="mt-4">
+          <v-avatar size="100">
+            <img src="../assets/images/iceburg.jpg" />
+          </v-avatar>
+          <p class="white--gray subheading pl--3 mt-3">YOUNG</p>
+        </v-flex>
+
+        <v-flex class="mt-4 mb-5">
+          <Popup></Popup>
+        </v-flex>
+      </v-layout>
+
       <v-list nav dense>
         <v-list-item-group
           v-model="group"
@@ -36,7 +49,9 @@
 </template>
 
 <script>
+import Popup from "./Popup.vue";
 export default {
+  components: { Popup },
   data: () => ({
     drawer: false,
     group: null,
@@ -46,6 +61,7 @@ export default {
       { icon: "mdi-inbox", text: "My Project", router: "/project" },
       // { icon: "mdi-account", text: "Team", router: "/team" },
       { icon: "mdi-school", text: "School", router: "/school" },
+      { icon: "mdi-fire", text: "Fire", router: "/firebase-test" },
     ],
   }),
 

@@ -100,7 +100,11 @@ export default {
           title: "ColorPaper",
           person: "Young",
           due: "2021.04 ~",
-          content: "ongoing",
+          content:
+            "기상청에서 제공하는 중기예보 데이터와 문화체육관광부에서 제공하는 데이터 API를 활용하여 사용자에게 날씨에 맞는 레저활동을 추천해주는 Web Application을 개발 합니다.",
+          tech: "React, JAVA(Spring), NodeJS, SCSS, DB, 현재개발 진행중",
+          planning:
+            "Front-end: React, Back-end: JavaSpring Or NodeJS, DB: MongoDB",
           image1: require("../assets/images/project5-1.jpg"),
           image2: require("../assets/images/project5-2.jpg"),
           image3: require("../assets/images/project5-3.jpg"),
@@ -135,34 +139,43 @@ img {
 
 .content {
   margin-top: 20px;
-  font-family: "GmarketSansTTFBold";
-  font-weight: bold;
+  font-family: "Cafe24Dangdanghae";
+  font-weight: 800;
   font-size: 1.9vh;
+  color: black;
 
   .content_in {
+    font-family: "Cafe24SsurroundAir";
     color: rgb(94, 94, 94);
+    font-weight: 500 !important;
   }
 }
 
 .tech {
   margin-top: 20px;
-  font-family: "GmarketSansTTFBold";
-  font-weight: bold;
+  font-family: "Cafe24Dangdanghae";
+  font-weight: 800;
   font-size: 1.9vh;
+  color: black;
 
-  .tech {
+  .tech_in {
+    font-family: "Cafe24SsurroundAir";
     color: rgb(94, 94, 94);
+    font-weight: 500 !important;
   }
 }
 
 .planning {
   margin-top: 20px;
-  font-family: "GmarketSansTTFBold";
-  font-weight: bold;
+  font-family: "Cafe24Dangdanghae";
+  font-weight: 800;
   font-size: 1.9vh;
+  color: black;
 
   .planning_in {
+    font-family: "Cafe24SsurroundAir";
     color: rgb(94, 94, 94);
+    font-weight: 500 !important;
   }
 }
 
