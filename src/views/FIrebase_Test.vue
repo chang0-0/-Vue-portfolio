@@ -49,6 +49,7 @@ export default {
     };
   },
   methods: {
+    // 추가
     async addProject() {
       if (this.newProject) {
         await db.collection("Projects").add({
@@ -57,6 +58,7 @@ export default {
         this.newProject = "";
       }
     },
+    // 삭제
     deleteProject(id) {
       db.collection("Projects").doc(id).delete();
     },
