@@ -2,6 +2,8 @@ import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 
+// https://myportfolio-4e255.web.app/
+
 const firebaseConfig = {
   apiKey: "AIzaSyBY-vSRQDTxFW5JK25tuVNxwwKMaNzDnvw",
   authDomain: "myportfolio-4e255.firebaseapp.com",

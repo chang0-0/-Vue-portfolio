@@ -36,10 +36,8 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
-                :rules="inputRules"
-                :value="formattedDate"
                 v-model="date"
-                label="Picker without buttons"
+                label="Date"
                 prepend-icon="mdi-calendar"
                 readonly
                 v-bind="attrs"
@@ -64,16 +62,16 @@
 import format from "date-fns/format";
 
 export default {
-  // data() {
-  //   return {
-  //     title: "",
-  //     content: "",
-  //     date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-  //       .toISOString()
-  //       .substr(0, 10),
-  //     menu2: false,
-  //   };
-  // },
+  data() {
+    return {
+      title: "",
+      content: "",
+      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+        .toISOString()
+        .substr(0, 10),
+      menu2: false,
+    };
+  },
 
   // methods: {
   //   async submit() {
