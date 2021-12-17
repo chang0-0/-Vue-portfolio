@@ -1,6 +1,10 @@
 // Import the functions you need from the SDKs you need
+import firebase from "firebase/app";
+import "firebase/firestore";
+//import { firestore } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+// https://myportfolio-4e255.web.app/
 
 const firebaseConfig = {
   apiKey: "AIzaSyBY-vSRQDTxFW5JK25tuVNxwwKMaNzDnvw",
@@ -16,6 +20,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getAnalytics(app);
+const analytics = getAnalytics(app);
+const db = firebase.firestore();
 
-export default db;
+db.settings({ timestampsInSnapshots: true });
+
+export default { app, db, analytics };

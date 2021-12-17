@@ -1,7 +1,13 @@
 import Vue from "vue";
+import VueFire from "vuefire";
 import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
+import { firestorePlugin } from "vuefire";
+
+Vue.use(firestorePlugin);
+
+Vue.use(VueFire);
 
 Vue.config.productionTip = false;
 

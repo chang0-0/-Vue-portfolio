@@ -12,16 +12,18 @@
       </v-card-title>
 
       <v-card-text>
-        <v-form class="px-3">
+        <v-form class="px-3" ref="form">
           <v-text-field
             label="Title"
             v-model="title"
             prepend-icon="folder"
+            :rules="inputRules"
           ></v-text-field>
           <v-textarea
             label="Information"
             v-model="content"
             prepend-icon="edit"
+            :rules="inputRules"
           ></v-textarea>
 
           <v-menu
@@ -34,6 +36,8 @@
           >
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
+                :rules="inputRules"
+                :value="formattedDate"
                 v-model="date"
                 label="Picker without buttons"
                 prepend-icon="mdi-calendar"
@@ -56,37 +60,48 @@
 </template>
 
 <script>
-//import db from "../fb";
+import db from "../firebase";
+import format from "date-fns/format";
 
 export default {
   data() {
     return {
       title: "",
       content: "",
-      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+      ate: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
         .toISOString()
         .substr(0, 10),
       menu2: false,
     };
   },
+
   methods: {
     submit() {
-      console.log(this.title, this.content, this.date);
+      if (this.$refs.form.validate()) {
+        const project = {
+          title: this.title,
+          content: this.content,
+          date: format(this.date, "DD/MM/YYYY"),
+        };
+        db.collection("projects")
+          .add(project)
+          .then(() => {
+            console.log("added to db");
+          })
+          .set({ title: this.title, content: this.content, data: this.date })
+          .then(function () {
+            console.log("saved!");
+          })
+          .catch(function (error) {
+            console.log("Error writing document: ", error);
+          });
+      }
+    },
+  },
 
-      // firebase
-      //   .firestore()
-      //   .collection("data")
-      //   .set({
-      //     title: this.title,
-      //     content: this.content,
-      //     data: this.date,
-      //   })
-      //   .then(function () {
-      //     console.log("saved!");
-      //   })
-      //   .catch(function (error) {
-      //     console.log("Error writing document: ", error);
-      //   });
+  computed: {
+    formattedDate() {
+      return this.date ? format(this.date, "DD/MM/YYYY") : "";
     },
   },
 };
