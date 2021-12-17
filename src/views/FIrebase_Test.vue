@@ -37,6 +37,7 @@
     </transition-group>
   </div>
 </template>
+
 <script>
 import { db } from "../firebase/db";
 
