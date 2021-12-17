@@ -60,43 +60,43 @@
 </template>
 
 <script>
-import db from "../firebase";
+//import db from "../plugins/firebase";
 import format from "date-fns/format";
 
 export default {
-  data() {
-    return {
-      title: "",
-      content: "",
-      ate: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-        .toISOString()
-        .substr(0, 10),
-      menu2: false,
-    };
-  },
+  // data() {
+  //   return {
+  //     title: "",
+  //     content: "",
+  //     ate: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+  //       .toISOString()
+  //       .substr(0, 10),
+  //     menu2: false,
+  //   };
+  // },
 
   methods: {
-    submit() {
-      if (this.$refs.form.validate()) {
-        const project = {
-          title: this.title,
-          content: this.content,
-          date: format(this.date, "DD/MM/YYYY"),
-        };
-        db.collection("projects")
-          .add(project)
-          .then(() => {
-            console.log("added to db");
-          })
-          .set({ title: this.title, content: this.content, data: this.date })
-          .then(function () {
-            console.log("saved!");
-          })
-          .catch(function (error) {
-            console.log("Error writing document: ", error);
-          });
-      }
-    },
+    // submit() {
+    //   if (this.$refs.form.validate()) {
+    //     const project = {
+    //       title: this.title,
+    //       content: this.content,
+    //       date: format(this.date, "DD/MM/YYYY"),
+    //     };
+    //     db.collection("projects")
+    //       .add(project)
+    //       .then(() => {
+    //         console.log("added to db");
+    //       })
+    //       .set({ title: this.title, content: this.content, data: this.date })
+    //       .then(function () {
+    //         console.log("saved!");
+    //       })
+    //       .catch(function (error) {
+    //         console.log("Error writing document: ", error);
+    //       });
+    //   }
+    // },
   },
 
   computed: {
