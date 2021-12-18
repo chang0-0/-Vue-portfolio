@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div class="pt-3">
     <v-row class="d-flex justify-center">
       <v-col cols="6">
@@ -87,5 +87,3 @@ export default {
   }
 }
 </style>
-
---!> 

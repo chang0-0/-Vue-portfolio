@@ -8,23 +8,21 @@
 
     <v-card>
       <v-card-title>
-        <span class="text-h5">Add s New Project</span>
+        <span class="text-h5">Add New Project</span>
       </v-card-title>
 
       <v-card-text>
-        <v-form class="px-3" ref="form">
+        <v-form class="px-3">
           <v-text-field
             label="Title"
-            v-model="title"
+            v-model="newProject"
             prepend-icon="folder"
-            :rules="inputRules"
           ></v-text-field>
-          <v-textarea
-            label="Information"
-            v-model="content"
+          <v-text-field
+            label="Person"
+            v-model="person"
             prepend-icon="edit"
-            :rules="inputRules"
-          ></v-textarea>
+          ></v-text-field>
 
           <v-menu
             v-model="menu2"
@@ -37,7 +35,7 @@
             <template v-slot:activator="{ on, attrs }">
               <v-text-field
                 v-model="date"
-                label="Date"
+                label="Due Date"
                 prepend-icon="mdi-calendar"
                 readonly
                 v-bind="attrs"
@@ -50,7 +48,18 @@
             ></v-date-picker>
           </v-menu>
 
-          <v-btn class="success mx-0 mt-3" @click="submit">Add Project </v-btn>
+          <v-col class="select" cols="2" sm="5">
+            <v-select
+              v-model="state"
+              :items="items"
+              label="State"
+              prepend-icon="mdi-flag"
+            ></v-select>
+          </v-col>
+
+          <v-btn class="success mx-0 mt-3" @click="addProject"
+            >Add Project
+          </v-btn>
         </v-form>
       </v-card-text>
     </v-card>
@@ -58,49 +67,56 @@
 </template>
 
 <script>
-//import { db } from "../firebase/db";
-import format from "date-fns/format";
+import { db } from "../firebase/db";
+
+//import { format } from "date-fns/format";
 
 export default {
   data() {
     return {
-      title: "",
-      content: "",
-      date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
-        .toISOString()
-        .substr(0, 10),
-      menu2: false,
+      Projects: [],
+      newProject: "",
+      person: "",
+      date: null,
+      state: null,
+      items: ["complete", "ongoing"],
+
+      // date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000)
+      //   .toISOString()
+      //   .substr(0, 10),
+      //menu2: false,
     };
   },
-
-  // methods: {
-  //   async submit() {
-  //     if (this.$refs.form.validate()) {
-  //       const project = {
-  //         title: this.title,
-  //         content: this.content,
-  //         date: format(this.date, "DD/MM/YYYY"),
-  //       };
-  //       db.collection("projects")
-  //         .add(project)
-  //         .then(() => {
-  //           console.log("added to db");
-  //         })
-  //         .set({ title: this.title, content: this.content, data: this.date })
-  //         .then(function () {
-  //           console.log("saved!");
-  //         })
-  //         .catch(function (error) {
-  //           console.log("Error writing document: ", error);
-  //         });
-  //     }
-  //   },
-  // },
-
-  computed: {
-    formattedDate() {
-      return this.date ? format(this.date, "DD/MM/YYYY") : "";
+  methods: {
+    async addProject() {
+      if (this.newProject) {
+        await db.collection("Projects").add({
+          title: this.newProject,
+          person: this.person,
+          date: this.date,
+          state: this.state,
+        });
+        this.newProject = "";
+        this.person = "";
+        this.date = null;
+        this.state = "";
+      }
     },
+  },
+  computed: {
+    // formattedDate() {
+    //   return this.date ? format(this.date, "YYYY") : null;
+    // },
+  },
+
+  firestore: {
+    Projects: db.collection("Projects"),
   },
 };
 </script>
+
+<style lang="scss">
+.select {
+  margin-left: -12px;
+}
+</style>
