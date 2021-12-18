@@ -46,7 +46,12 @@
                 {{ Project.state }}
 
                 <v-cols cols="4" class="deleteSection">
-                  <v-btn icon @click="deleteProject(Project.id)">
+                  <v-btn
+                    icon
+                    color="rgb(100,200,200)"
+                    @click="deleteProject(Project.id)"
+                    large
+                  >
                     <v-icon>mdi-delete</v-icon>
                   </v-btn>
                 </v-cols>
@@ -181,6 +186,6 @@ div {
 
 .deleteSection {
   margin-left: 40px;
-  color: blue;
+  padding-left: 30px;
 }
 </style>

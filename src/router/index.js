@@ -31,14 +31,14 @@ const routes = [
     component: Team,
   },
   {
-    path: "/firebase-test",
-    name: "Fire",
-    component: Fire,
-  },
-  {
     path: "/dashboard",
     name: "dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/firebase-test",
+    name: "Fire",
+    component: Fire,
   },
 ];
 
