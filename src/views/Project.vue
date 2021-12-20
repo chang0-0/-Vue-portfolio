@@ -89,7 +89,7 @@ export default {
 
 <style lang="scss">
 img {
-  margin-top: 40px;
+  margin-top: 60px;
   width: 100%;
 }
 
@@ -98,6 +98,8 @@ img {
 
   .ProjectPageTitle {
     margin-left: 40px;
+    font-weight: 900;
+    font-family: "GowunDodum-Regular";
   }
 }
 
@@ -110,10 +112,10 @@ img {
 
 .content {
   margin-top: 20px;
-  font-family: "Cafe24Dangdanghae";
-  font-weight: 800;
+  font-family: "SEBANG Gothic";
+  font-weight: 600;
   font-size: 1.9vh;
-  color: black;
+  color: rgb(255, 124, 101);
 
   .content_in {
     font-family: "Cafe24SsurroundAir";
@@ -124,10 +126,10 @@ img {
 
 .tech {
   margin-top: 20px;
-  font-family: "Cafe24Dangdanghae";
-  font-weight: 800;
+  font-family: "SEBANG Gothic";
+  color: lightsalmon;
+  font-weight: 600;
   font-size: 1.9vh;
-  color: black;
 
   .tech_in {
     font-family: "Cafe24SsurroundAir";
@@ -138,10 +140,10 @@ img {
 
 .planning {
   margin-top: 20px;
-  font-family: "Cafe24Dangdanghae";
-  font-weight: 800;
+  font-family: "SEBANG Gothic";
+  font-weight: 600;
   font-size: 1.9vh;
-  color: black;
+  color: rgb(255, 167, 180);
 
   .planning_in {
     font-family: "Cafe24SsurroundAir";

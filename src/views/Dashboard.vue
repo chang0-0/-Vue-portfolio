@@ -1,6 +1,6 @@
 <template>
-  <div class="dashboard">
-    <h1 class="subheading grey--text">Dashboard</h1>
+  <div class="DashboardPage">
+    <h1 class="DashboardPageTitle">Dashboard</h1>
 
     <v-content>
       <v-container class="my-3 mt-12">
@@ -30,7 +30,7 @@
           <v-row no-gutters :class="`pa-5 project ${Project.state}`">
             <v-col cols="12" md="6">
               <div class="caption grey--text">Project Title</div>
-              <div>{{ Project.title }}</div>
+              <div class="DashboardPageProject.title">{{ Project.title }}</div>
             </v-col>
             <v-col cols="4" md="2" sm="4">
               <div class="caption grey--text">Person</div>
@@ -138,7 +138,26 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.DashboardPage {
+  margin-top: 40px;
+
+  .DashboardPageTitle {
+    margin-left: 40px;
+    font-weight: 900;
+    font-family: "GowunDodum-Regular";
+  }
+
+  .DashboardPageProject.title {
+    font-size: 200px;
+  }
+
+  .deleteSection {
+    margin-left: 40px;
+    padding-left: 30px;
+  }
+}
+
 @font-face {
   font-family: "GowunDodum-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunDodum-Regular.woff")
@@ -162,30 +181,5 @@ export default {
 
 div {
   font-family: "GowunDodum-Regular";
-}
-
-.imgContainer {
-  position: absolute;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-  clip: rect(202px, 220px, 220px, 20px);
-}
-.titleContainer {
-  font-size: 20px;
-  font-weight: bold;
-}
-.spantitle {
-  font-size: 50px;
-  margin-top: 40px;
-}
-
-.cardSpan {
-  margin-top: 140px;
-}
-
-.deleteSection {
-  margin-left: 40px;
-  padding-left: 30px;
 }
 </style>

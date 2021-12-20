@@ -71,49 +71,56 @@ export default {
   font-style: normal;
 }
 
+/* 고운 바탕 */
+@font-face {
+  font-family: "GowunBatang-Regular";
+  font-weight: normal;
+  src: url("../fonts/GowunBatang-Regular.ttf") format("truetype");
+}
+
 /* 나눔 명조 */
 @font-face {
-  font-family: "Nanum Myeongjo";
+  font-family: "NanumMyeongjo-ExtraBold";
   font-weight: 700;
   src: url("../fonts/NanumMyeongjo-ExtraBold.ttf") format("truetype");
 }
 
 /* 로보토 */
 @font-face {
-  font-family: "Roboto Regular";
+  font-family: "Roboto-Regular";
   font-weight: 400;
   src: url("../fonts/Roboto-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Roboto Medium";
+  font-family: "Roboto-Medium";
   font-weight: 500;
   src: url("../fonts/Roboto-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Roboto Bold";
+  font-family: "Roboto-Bold";
   font-weight: 700;
   src: url("../fonts/Roboto-Bold.ttf") format("truetype");
 }
 
 /* G마켓Bold */
 @font-face {
-  font-family: "GmarketSansBold";
+  font-family: "GmarketSansTTFBold";
   font-weight: 700;
   src: url("../fonts/GmarketSansTTFBold.ttf") format("truetype");
 }
 
 /* G마켓Light */
 @font-face {
-  font-family: "GmarketSansLight";
+  font-family: "GmarketSansTTFLight";
   font-weight: 700;
   src: url("../fonts/GmarketSansTTFLight.ttf") format("truetype");
 }
 
 /* G마켓Medium */
 @font-face {
-  font-family: "GmarketSansMedium";
+  font-family: "GmarketSansTTFMedium";
   font-weight: 700;
   src: url("../fonts/GmarketSansTTFMedium.ttf") format("truetype");
 }
@@ -148,23 +155,23 @@ export default {
 
 /*나눔스퀘어*/
 @font-face {
-  font-family: "NanumSquare";
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: "NanumSquareR";
+  src: url("../fonts/NanumSquareR.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Y";
+  font-family: "Y 너만을 비춤체";
   src: url("../fonts/Y 너만을 비춤체.ttf") format("truetype");
 }
 
 /*BlackHanSans-Regular*/
 @font-face {
-  font-family: "BlackHanSans";
+  font-family: "BlackHanSans-Regular";
   src: url("../fonts/BlackHanSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "SEBANG";
+  font-family: "SEBANG Gothic";
   src: url("../fonts/SEBANG Gothic.ttf") format("truetype");
 }
 
@@ -251,10 +258,10 @@ export default {
   .section_desc {
     margin-top: 20px;
     font-size: 40px;
-    color: #898989;
+    color: #6e6e6e;
     line-height: 34px;
-    font-weight: 400;
-    font-family: "Y";
+    font-weight: 200;
+    font-family: "GmarketSansTTFMedium";
   }
 
   .intro_section3_img {
