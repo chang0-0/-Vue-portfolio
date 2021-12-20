@@ -69,8 +69,6 @@
 <script>
 import { db } from "../firebase/db";
 
-//import { format } from "date-fns/format";
-
 export default {
   data() {
     return {

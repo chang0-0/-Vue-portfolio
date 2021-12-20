@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
+import "firebase/compat/storage";
 
 // HostingURL : https://myportfolio-4e255.web.app/
 
@@ -18,5 +19,8 @@ const firebaseConfig = {
 
 //const app = initializeApp(firebaseConfig);
 export const db = firebase.initializeApp(firebaseConfig).firestore();
+export const storage = firebase
+  .initializeApp(firebaseConfig)
+  .storage("gs://myportfolio-4e255.appspot.com");
 
-export default { db };
+export default { db, storage };

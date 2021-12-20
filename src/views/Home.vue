@@ -18,7 +18,7 @@
       </div>
       <div class="career_list_section">
         <div class="carrer_list_t">
-          컴퓨터 공학과 (졸업예정)
+          컴퓨터 공학 4년제 졸업
           <br />
           FRONT-DEVELOPER
           <br />

@@ -35,17 +35,44 @@
         </v-row>
       </v-card>
     </transition-group>
+
+    <vue-dropzone
+      ref="imgDropzone"
+      :options="dropzoneOptions"
+      @vdropzone-complete="afterComplete"
+    ></vue-dropzone>
+
+    <div v-if="images.length > 0">
+      <div v-for="image in images" :key="image.src">
+        <img :src="iamge.src" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { db } from "../firebase/db";
+//import firebase from "firebase/compat/app";
+import vue2Dropzone from "vue2-dropzone";
+import "vue2-dropzone/dist/vue2Dropzone.min.css";
+let uuid = require("uuid");
 
 export default {
+  name: "FireTest",
+  components: {
+    vueDropzone: vue2Dropzone,
+  },
   data() {
     return {
       Projects: [],
       newProject: "",
+      images: [],
+      dropzoneOptions: {
+        url: "https://httpbin.org/post",
+        thumbnailWidth: 150,
+        addRemoveLinks: false,
+        acceptedFiles: ".jpg, .jpeg, .png",
+      },
     };
   },
   methods: {
@@ -61,6 +88,26 @@ export default {
     // 삭제
     deleteProject(id) {
       db.collection("Projects").doc(id).delete();
+    },
+
+    async afterComplete(file) {
+      try {
+        const imageName = uuid.v1();
+        const metaData = {
+          contentType: "image/png",
+        };
+
+        const storageRef = db.storage().ref();
+        const imageRef = storageRef.child(`images/${imageName}.png`);
+
+        await imageRef.put(file, metaData);
+
+        const downloadUrl = await imageRef.getDownloadURL();
+        this.images.push({ src: downloadUrl });
+        this.$refs.imgDropzone.removeFile(file);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 
