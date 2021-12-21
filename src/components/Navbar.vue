@@ -6,25 +6,25 @@
       <v-toolbar-title> YOUNG </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn icon>
+      <!-- <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
       </v-btn>
 
       <v-btn icon>
         <v-icon>mdi-heart</v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-toolbar>
 
     <v-navigation-drawer v-model="drawer" absolute bottom temporary>
       <v-layout column align-center>
-        <v-flex class="mt-4">
-          <v-avatar size="100">
-            <img src="../assets/images/iceburg.jpg" />
-          </v-avatar>
-          <p class="white--gray subheading pl--3 mt-3">YOUNG</p>
+        <v-flex class="AvatarSection">
+          <div size="160" class="Avatar">
+            <img src="../assets/images/colorpaper.jpg" />
+          </div>
+          <p class="AvatarSectionName">Young</p>
         </v-flex>
 
-        <v-flex class="mt-4 mb-5">
+        <v-flex class="PopupSection">
           <Popup></Popup>
         </v-flex>
       </v-layout>
@@ -56,12 +56,12 @@ export default {
     drawer: false,
     group: null,
     items: [
-      { icon: "mdi-account", text: "It's Me", router: "/" },
-      { icon: "mdi-domain", text: "Dashboard", router: "/dashboard" },
-      { icon: "mdi-inbox", text: "My Project", router: "/project" },
+      { icon: "mdi-human-greeting-variant", text: "It's Me", router: "/" },
+      { icon: "mdi-clipboard", text: "Dashboard", router: "/dashboard" },
+      { icon: "mdi-projector-screen", text: "My Project", router: "/project" },
       // { icon: "mdi-account", text: "Team", router: "/team" },
-      { icon: "mdi-school", text: "School", router: "/school" },
-      { icon: "mdi-fire", text: "Fire", router: "/firebase-test" },
+      { icon: "mdi-message", text: "Message", router: "/message" },
+      // { icon: "mdi-fire", text: "Fire", router: "/firebase-test" },
     ],
   }),
 
@@ -72,3 +72,45 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+img {
+  size: 40%;
+}
+
+.AvatarSection {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: abolute;
+  width: auto;
+  height: 235px;
+
+  .Avatar {
+    border-radius: 100%;
+    position: relative;
+    bottom: 40%;
+  }
+
+  .AvatarSectionName {
+    position: relative;
+    font-weight: 600;
+    font-size: 40px;
+    right: 5%;
+    text-decoration: underline;
+    //font-family: Cafe24Dangdanghae;
+    //font-family: GowunDodum-Regular;
+    font-family: GowunDodum-Regular;
+    bottom: 139%;
+  }
+}
+
+.PopupSection {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: abolute;
+  margin-bottom: 38px;
+  margin-top: 45px;
+}
+</style>
