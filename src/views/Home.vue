@@ -23,10 +23,13 @@
           FRONT-DEVELOPER
           <br />
           JAVA<br />
+          JavaScript<br />
           React <br />
           Vue <br />
           CSS <br />
-          정보처리기사 보유
+          정보처리기사 <br />
+          ADsP <br />
+          SQLD <br />
         </div>
         <div class="career_deco"></div>
       </div>

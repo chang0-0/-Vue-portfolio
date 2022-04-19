@@ -44,14 +44,14 @@
           :key="Message.id"
         >
           <v-row class="MessageItemV-row">
-            <v-cols cols="8" class="MessageItemList">
+            <v-cols cols="10" class="MessageItemTitleCols">
               <v-list-item-title class="MessageItemTitle">
                 {{ Message.title }}
               </v-list-item-title>
             </v-cols>
-            <v-cols cols="8" class="MessageItemList">
-              <v-list-item-title class="MessageItemContent"
-                >{{ Message.content }}
+            <v-cols cols="10" class="MessageItemContentCols">
+              <v-list-item-title class="MessageItemContent">
+                {{ Message.content }}
               </v-list-item-title>
             </v-cols>
             <v-cols cols="4" class="MessageDeleteSection">
@@ -62,7 +62,7 @@
                 @click="deleteMessage(Message.id)"
                 class="MessageDeleteButton"
               >
-                <v-icon>mdi-delete</v-icon>
+                <v-icon>mdi-close</v-icon>
               </v-btn>
             </v-cols>
           </v-row>
@@ -210,7 +210,7 @@ export default {
           align-items: center;
           margin-top: 40px;
 
-          .MessageItemList {
+          .MessageItemTitleCols {
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -220,6 +220,12 @@ export default {
               font-weight: 900;
               font-size: 20px;
             }
+          }
+
+          .MessageItemContentCols {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
 
             .MessageItemContent {
               font-family: "GowunDodum-Regular";
@@ -229,6 +235,9 @@ export default {
           }
 
           .MessageDeleteSection {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
             .MessageDeleteButton {
               left: 140%;
             }
@@ -242,11 +251,11 @@ export default {
     align-content: center;
     justify-content: center;
     align-items: center;
+    position: absolute;
     width: 1200px;
     margin-top: 80px;
     height: 300px;
-    right: 20%;
-    position: relative;
+    margin-left: -330px;
   }
 }
 </style>
